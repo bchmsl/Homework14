@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/postsFragment">
+
+    <fragment
+        android:id="@+id/postsFragment"
+        android:name="com.bchmsl.homework14.ui.posts.PostsFragment"
+        android:label="fragment_posts"
+        tools:layout="@layout/fragment_posts" >
+        <action
+            android:id="@+id/action_postsFragment_to_postOpenedFragment"
+            app:destination="@id/postOpenedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postOpenedFragment"
+        android:name="com.bchmsl.homework14.ui.post_opened.PostOpenedFragment"
+        android:label="fragment_post_opened"
+        tools:layout="@layout/fragment_post_opened" >
+        <argument
+            android:name="post"
+            app:argType="com.bchmsl.homework14.model.PostsResponse$Post"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>
